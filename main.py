@@ -4,6 +4,9 @@ import praw
 from textblob import TextBlob
 from typing import List
 import pandas as pd
+from transformers import pipeline
+
+
 
 # Initialize the FastAPI app
 app = FastAPI()
@@ -39,6 +42,7 @@ def analyze_sentiment(subreddit: Subreddit):
         posts = reddit.subreddit(subreddit_name).top(time_filter=subreddit.time_filter,limit=subreddit.limit)
 
         sentiment_results = []
+       
 
         for post in posts:
             analysis = TextBlob(post.title)
@@ -57,6 +61,8 @@ def analyze_sentiment(subreddit: Subreddit):
                 subreddit=post.subreddit.display_name,
                 selftext=post.selftext or ""
             ))
+
+     
 
         return sentiment_results
 
