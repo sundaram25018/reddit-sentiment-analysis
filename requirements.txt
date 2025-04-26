@@ -2,14 +2,6 @@ fastapi==0.110.0
 uvicorn==0.29.0
 praw==7.7.1
 textblob==0.18.0
-
-transformers==4.36.2
-tensorflow==2.18.0
-tensorflow-intel==2.18.0
-keras==2.11.0
-ml-dtypes==0.4.0
-tensorboard==2.18.0
-
 streamlit==1.33.0
 pandas==2.2.2
 requests==2.31.0
